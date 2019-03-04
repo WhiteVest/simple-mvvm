@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<head>
+    <script src="./watcher.js"></script>
+    <script src="./mvvm.js"></script>
+    <script src="./observer.js"></script>
+    <script src="./compiler.js"></script>
+    <title>MVVM框架</title>
+</head>
+<body>
+    <div id="app">
+        Input Name: <input v-model="person.name"/>
+        <p>My Name: {{person.name}}</p>
+        <button v-on:click="changeName">click to changeName</button>
+    </div>
+    <script>
+        let mv = new MVVM({
+            data:{
+                time:'',
+                person:{
+                    name:''
+                }
+            },
+            methods:{
+                changeName:function(){
+                    this.person.name = 'wdf';
+                }
+            }
+        });
+    </script>
+
+</body>
